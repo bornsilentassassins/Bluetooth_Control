@@ -1,9 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="io.github.bornsilentassassins.bluetoothremote.Controller">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Left"
+            android:background="@color/colorAccent"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/up_arrow"
+                android:id="@+id/left_up"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"/>
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/down_arrow"
+                android:id="@+id/left_down"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20sp"/>
+
+        </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Arm"
+            android:background="@color/colorAccent"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/up_arrow"
+                android:id="@+id/arm_up"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"/>
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/down_arrow"
+                android:id="@+id/arm_down"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/open"
+                android:id="@+id/open"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"/>
+
+            <Button
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@drawable/close"
+                android:id="@+id/close"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20sp"/>
+
+        </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Right"
+            android:background="@color/colorAccent"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:background="@drawable/up_arrow"
+                    android:id="@+id/right_up"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20sp"/>
+
+                <Button
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:background="@drawable/down_arrow"
+                    android:id="@+id/right_down"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
