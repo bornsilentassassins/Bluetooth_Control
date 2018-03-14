@@ -12,8 +12,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="14dp"
-        android:backgroundTint="@color/colorPrimaryDark" />
+        android:background="@color/colorListItem"
+        android:backgroundTint="@android:color/white" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/BTconnect"
@@ -22,15 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="25sp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_bluetooth_white_24dp"
-        app:backgroundTint="@color/colorPrimaryDark" />
+        android:src="@drawable/ic_bluetooth_white_24dp" />
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/loading" />
 
 </RelativeLayout>
