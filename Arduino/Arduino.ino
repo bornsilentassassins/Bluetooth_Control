@@ -5,125 +5,45 @@
  * 
  *   - Motor Control Pins
  *                        Positive  Negative
- *    Left Wheels    ->     13        12
- *    Right Wheels   ->     11        10
- *    Gripper Level  ->      9         8
- *    Gripper Control->      7         6
+ *    Left Wheels    ->      7         6
+ *    Right Wheels   ->      5         4
+ *    Gripper Level  ->      3         2
+ *    Gripper Control->      1         0
  *  
  *   - Other Pins
- *    Bluetooth (Rx|Tx) -> 2,3
- *    Bluetooth State   -> 4
+ *    Bluetooth (Rx|Tx) -> 8,9
  * 
  */
 
-#define LP  13;
-#define LN  12;
-#define RP  11;
-#define RN  10;
-#define GLP 9;
-#define GLN 8;
-#define GCP 7;
-#define GCN 6;
-#define BT  5;
 
-SoftwareSerial bluetooth(2,3);
+String number = "";
 
-void wheel(int i){
-  switch(i){
-    case 0:
-      digitalWrite(RP,LOW);
-      digitalWrite(LP,LOW);
-      digitalWrite(RN,LOW);
-      digitalWrite(LN,LOW);
-      digitalWrite(GLP,LOW);
-      digitalWrite(GLN,LOW);
-      digitalWrite(GCP,LOW);
-      digitalWrite(GCN,LOW);
-      break;
-      
-    case 1:
-      digitalWrite(RP,HIGH);
-      digitalWrite(LP,HIGH);
-      digitalWrite(RN,LOW);
-      digitalWrite(LN,LOW);
-      break;
-      
-    case 2:
-      digitalWrite(RU,HIGH);
-      digitalWrite(LU,LOW);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,HIGH);
-      break;
-      
-    case 3:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,HIGH);
-      digitalWrite(RD,HIGH);
-      digitalWrite(LD,LOW);
-      digitalWrite(AU,LOW);
-      digitalWrite(AD,LOW);
-      digitalWrite(OU,LOW);
-      digitalWrite(OD,LOW);
-      break;
-    case 4:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,HIGH);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,HIGH);
-      digitalWrite(AU,LOW);
-      digitalWrite(AD,LOW);
-      digitalWrite(OU,LOW);
-      digitalWrite(OD,LOW);
-      break;
-    case 5:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,LOW);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,LOW);
-      digitalWrite(AU,HIGH);
-      digitalWrite(AD,LOW);
-      digitalWrite(OU,LOW);
-      digitalWrite(OD,LOW);
-      break;
-    case 6:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,LOW);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,LOW);
-      digitalWrite(AU,LOW);
-      digitalWrite(AD,HIGH);
-      digitalWrite(OU,LOW);
-      digitalWrite(OD,LOW);
-      break;
-    case 7:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,LOW);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,LOW);
-      digitalWrite(AU,LOW);
-      digitalWrite(AD,LOW);
-      digitalWrite(OU,HIGH);
-      digitalWrite(OD,LOW);
-      break;
-    case 8:
-      digitalWrite(RU,LOW);
-      digitalWrite(LU,LOW);
-      digitalWrite(RD,LOW);
-      digitalWrite(LD,LOW);
-      digitalWrite(AU,LOW);
-      digitalWrite(AD,LOW);
-      digitalWrite(OU,LOW);
-      digitalWrite(OD,HIGH);
-      break;
-  }
+SoftwareSerial Bluetooth(8,9);
+
+void pins(){
+  int pindata = number.toInt();
+  PORTD = pindata;
+  number = "";
 }
 
-void setup() {
-  // put your setup code here, to run once:
 
+void setup() {
+  Bluetooth.begin(38400);
+  DDRD = B11111111;
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
+  while(Bluetooth.available())
+  {
+    char temp = Bluetooth.read();
+    if(temp == '\n'){
+      break;
+    }
+    else if(isDigit(temp)){
+      number += (char)temp;
+    }
+  }
+
+  if(number != "") pins();
 }
