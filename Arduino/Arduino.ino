@@ -5,10 +5,10 @@
  * 
  *   - Motor Control Pins
  *                        Positive  Negative
- *    Left Wheels    ->      7         6
- *    Right Wheels   ->      5         4
- *    Gripper Level  ->      3         2
- *    Gripper Control->      1         0
+ *    Left Wheels    ->      0         1
+ *    Right Wheels   ->      2         3
+ *    Gripper Level  ->      4         5
+ *    Gripper Control->      6         7
  *  
  *   - Other Pins
  *    Bluetooth (Rx|Tx) -> 8,9
