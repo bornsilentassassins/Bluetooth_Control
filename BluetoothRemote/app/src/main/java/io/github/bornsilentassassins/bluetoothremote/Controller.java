@@ -47,7 +47,7 @@ public class Controller extends AppCompatActivity {
 
         new ConnectBT().execute();
 
-        leftUp.setOnTouchListener(new View.OnTouchListener() {
+        close.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -65,7 +65,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        leftDown.setOnTouchListener(new View.OnTouchListener() {
+        open.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -83,7 +83,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        rightUp.setOnTouchListener(new View.OnTouchListener() {
+        armDown.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -101,7 +101,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        rightDown.setOnTouchListener(new View.OnTouchListener() {
+        armUp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -119,7 +119,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        armUp.setOnTouchListener(new View.OnTouchListener() {
+        rightDown.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -137,7 +137,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        armDown.setOnTouchListener(new View.OnTouchListener() {
+        rightUp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -155,7 +155,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        open.setOnTouchListener(new View.OnTouchListener() {
+        leftDown.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -173,7 +173,7 @@ public class Controller extends AppCompatActivity {
             }
         });
 
-        close.setOnTouchListener(new View.OnTouchListener() {
+        leftUp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -232,8 +232,8 @@ public class Controller extends AppCompatActivity {
                 if (btSocket == null || !isBtConnected)
                 {
                     myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
-                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
+                    BluetoothDevice HC05 = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
+                    btSocket = HC05.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     btSocket.connect();//start connection
                 }
