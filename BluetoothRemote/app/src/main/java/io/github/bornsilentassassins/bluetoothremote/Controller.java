@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -54,12 +53,12 @@ public class Controller extends AppCompatActivity {
                     data &= 191;
                     data |= 128;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 63;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -72,12 +71,12 @@ public class Controller extends AppCompatActivity {
                     data &= 127;
                     data |= 64;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 63;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -90,12 +89,12 @@ public class Controller extends AppCompatActivity {
                     data &= 239;
                     data |= 32;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 207;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -108,12 +107,12 @@ public class Controller extends AppCompatActivity {
                     data &= 223;
                     data |= 16;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 207;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -126,12 +125,12 @@ public class Controller extends AppCompatActivity {
                     data &= 251;
                     data |= 8;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 243;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -144,12 +143,12 @@ public class Controller extends AppCompatActivity {
                     data &= 247;
                     data |= 4;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 243;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -162,12 +161,12 @@ public class Controller extends AppCompatActivity {
                     data &= 254;
                     data |= 2;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 252;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }
@@ -180,12 +179,12 @@ public class Controller extends AppCompatActivity {
                     data &= 253;
                     data |= 1;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     data &= 252;
                     sendData();
-                    Log.e("data",Integer.toString(data));
+//                    Log.e("data",Integer.toString(data));
                 }
                 return true;
             }

@@ -37,11 +37,6 @@ public class BTConnect extends AppCompatActivity {
 
         Connect = (FloatingActionButton) findViewById(R.id.BTconnect);
         devicelist = (ListView) findViewById(R.id.BTlist);
-
-
-
-
-
         myBluetooth = BluetoothAdapter.getDefaultAdapter();
 
         if(myBluetooth == null)
